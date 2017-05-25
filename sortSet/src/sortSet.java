@@ -86,9 +86,9 @@ public class sortSet {
 
 
     private sortEntity[] getList(){
-        sortEntity[]  a = new sortEntity[5];
+        sortEntity[]  a = new sortEntity[100];
 
-        for (int i= 0; i <5; i++) {
+        for (int i= 0; i <100; i++) {
             int random = new  Random().nextInt(500);
             sortEntity entry = new sortEntity(random);
             a[i] = entry;
