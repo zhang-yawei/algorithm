@@ -13,7 +13,8 @@ public class sortSet {
        // sortTest.testChooseSort();
        // sortTest.testInsertSort();
        // sortTest.testShellSort();
-        sortTest.testMergeSort();
+        // sortTest.testMergeSort();
+         sortTest.testMergeBU();
 
 
 
@@ -73,6 +74,19 @@ public class sortSet {
         merge.show(source);
     }
 
+
+    /**
+     * 测试自底向上的归并排序
+     * */
+    private void testMergeBU(){
+        sortEntity[] source = getList();
+        mergeBU merge_bu = new mergeBU();
+        merge_bu.show(source);
+        merge_bu.sort(source);
+
+        System.out.println("----------归并排序后-------------");
+        merge_bu.show(source);
+    }
 
 
 

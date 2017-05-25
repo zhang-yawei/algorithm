@@ -1,35 +1,25 @@
 package sortPackage;
 
 /**
- * Created by zhang on 2017/5/24.
- * 归并排序 自顶向下
+ * Created by zhangdawei on 2017/5/25.
+ * 归并排序,自底向上
  */
-public class mergeSort extends sortBaseClass {
+public class mergeBU extends sortBaseClass {
 
-    private static sortEntity[] temp;
+    private  static sortEntity[] temp;
 
-    @Override
-    public void sort(sortEntity[] comparaList) {
+        @Override
+        public void sort(sortEntity[] comparaList) {
+            int N = comparaList.length;
+            temp = new sortEntity[N];
 
+            for (int size = 1;size<N;size=2*size){
+                for (int low=0;low+size<=N;low+=2*size){
+                    merge(comparaList,low,low+size-1,Math.min(low+2*size-1,N-1));
+                }
+            }
 
-        temp = new sortEntity[comparaList.length];
-
-        sort(comparaList,0,comparaList.length-1);
-    }
-
-
-    //指定range 排序
-    private void sort(sortEntity[] a,int start,int end) {
-
-        if (start >= end) return;
-
-        int mid = (end-start)/2 +start;
-
-        sort(a,start,mid);
-        sort(a,mid+1,end);
-        merge(a,start,mid,end);
-
-    }
+        }
 
     // 对于一个左右两半部,各自有序的数组,排序
     // mid 包括在前半部
