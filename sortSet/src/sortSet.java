@@ -16,7 +16,8 @@ public class sortSet {
         // sortTest.testMergeSort();
         // sortTest.testMergeBU();
 
-        sortTest.testQuickSort();
+        //sortTest.testQuickSort();
+        sortTest.testBubbleSort();
 
 
     }
@@ -105,6 +106,20 @@ public class sortSet {
         quick.isSorted(source);
     }
 
+
+    /**
+     * 测试冒泡排序
+     * */
+    private void testBubbleSort(){
+        sortEntity[] source = getList();
+        bubbleSort bubble = new bubbleSort();
+        bubble.show(source);
+        bubble.sort(source);
+
+        System.out.println("----------快递排序后-------------");
+        bubble.show(source);
+        bubble.isSorted(source);
+    }
 
 
 
