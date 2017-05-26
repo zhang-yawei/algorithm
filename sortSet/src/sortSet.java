@@ -14,8 +14,9 @@ public class sortSet {
        // sortTest.testInsertSort();
        // sortTest.testShellSort();
         // sortTest.testMergeSort();
-         sortTest.testMergeBU();
+        // sortTest.testMergeBU();
 
+        sortTest.testQuickSort();
 
 
     }
@@ -86,6 +87,22 @@ public class sortSet {
 
         System.out.println("----------归并排序后-------------");
         merge_bu.show(source);
+    }
+
+
+    /**
+     * 测试快速排序
+     * */
+    private void testQuickSort(){
+        sortEntity[] source = getList();
+        quickSort quick = new quickSort();
+        quick.show(source);
+       // quick.portition(source,0,source.length-1);
+        quick.sort(source);
+
+        System.out.println("----------快递排序后-------------");
+        quick.show(source);
+        quick.isSorted(source);
     }
 
 

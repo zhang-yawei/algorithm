@@ -32,8 +32,12 @@ public class sortBaseClass implements sortInterface {
 
     public boolean isSorted(sortEntity[] a){
         for (int i = 0; i < a.length-1; i++) {
-            if (!less(a[i],a[i+1])) return false;
+            if (!less(a[i],a[i+1])) {
+                System.out.println(".......排序失败.......");
+                return false;
+            }
         }
+        System.out.println("!!!!!!!排序成功!!!!!!!");
         return true;
     }
 
