@@ -18,7 +18,11 @@ public class BinarySearchTree<Key extends Comparable<Key>,Value> implements ST<K
     public void put(Key key,Value value){
 
         int i = rank(key);
-        if (i < N && keys[i].compareTo(key) == 0) values[i] = value;
+        // 命中
+        if (i < N && keys[i].compareTo(key) == 0) {
+            values[i] = value;
+            return;
+        }
         for (int j = N;j > i;j--){
             keys[j] = keys[j - 1];
             values[j] = values[j - 1];
