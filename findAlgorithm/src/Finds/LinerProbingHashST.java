@@ -108,10 +108,4 @@ public class LinerProbingHashST <Key,Value>{
 
 
 
-    public void  treeMap(){
-        TreeMap
-    }
-
-
-
 }
