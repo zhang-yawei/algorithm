@@ -4,10 +4,10 @@ import sun.management.ThreadInfoCompositeData;
 
 /**
  * Created by zhang on 2017/6/20.
- * 顺序查找 链表
+ * 顺序查找 无序链表
  */
 
-public class SquentialSearchST<Key extends Comparable<Key>,Value > implements ST<Key ,Value >{
+public class SequentialSearchST<Key extends Comparable<Key>,Value > implements ST<Key ,Value >{
 
     private Node first;
 
@@ -36,7 +36,11 @@ public class SquentialSearchST<Key extends Comparable<Key>,Value > implements ST
     public void put(Key key, Value val) {
 
         for (Node x = first; x != null; x = x.next) {
-            if (key.equals(x.key)) x.val = val;
+            if (key.equals(x.key)) {
+                x.val = val;
+                return;
+            }
+
         }
         first = new Node(key, val, first);
     }
