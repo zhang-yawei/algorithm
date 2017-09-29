@@ -13,7 +13,8 @@ public class LinerProbingHashST <Key,Value>{
     private Key[] keys; // 键
     private Value[] vals; // 值
 
-    public LinerProbingHashST(){
+    public LinerProbingHashST(int m){
+        M = m;
         keys = (Key[]) new Object[M];
         vals = (Value []) new Object[M];
     }
@@ -25,8 +26,8 @@ public class LinerProbingHashST <Key,Value>{
     private void  resize(int m){
 
         LinerProbingHashST<Key,Value> t;
-        t = new LinerProbingHashST<>(m);
-        for(int i=0;i<M;i+=){
+        t = new LinerProbingHashST(m);
+        for(int i=0;i<M;i++){
             if (keys[i] != null){
                 t.put(keys[i],vals[i]);
             }

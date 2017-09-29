@@ -111,8 +111,8 @@
       <file leaf-file-name="LinerProbingHashST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Finds/LinerProbingHashST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="97" column="37" lean-forward="true" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+            <state relative-caret-position="200">
+              <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -151,6 +151,7 @@
       <find>deleteMix</find>
       <find>delete</find>
       <find>%</find>
+      <find>LinerProbingHashST</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -181,8 +182,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="467" />
-    <option name="y" value="133" />
+    <option name="x" value="449" />
+    <option name="y" value="83" />
     <option name="width" value="1459" />
     <option name="height" value="917" />
   </component>
@@ -519,15 +520,15 @@
       <workItem from="1503557717072" duration="15728000" />
       <workItem from="1503893879155" duration="6617000" />
       <workItem from="1503995930741" duration="14953000" />
-      <workItem from="1504084354664" duration="7000" />
+      <workItem from="1504084354664" duration="541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55133000" />
+    <option name="totallyTimeSpent" value="55667000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="467" y="133" width="1459" height="917" extended-state="0" />
+    <frame x="449" y="83" width="1459" height="917" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -985,8 +986,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Finds/LinerProbingHashST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="97" column="37" lean-forward="true" selection-start-line="97" selection-start-column="37" selection-end-line="97" selection-end-column="37" />
+        <state relative-caret-position="200">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
           <folding />
         </state>
       </provider>
