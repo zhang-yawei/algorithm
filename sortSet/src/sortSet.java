@@ -14,10 +14,10 @@ public class sortSet {
        // sortTest.testInsertSort();
        // sortTest.testShellSort();
         // sortTest.testMergeSort();
-        // sortTest.testMergeBU();
+         sortTest.testMergeBU();
 
         //sortTest.testQuickSort();
-        sortTest.testBubbleSort();
+      //  sortTest.testBubbleSort();
 
 
     }
@@ -86,8 +86,9 @@ public class sortSet {
         merge_bu.show(source);
         merge_bu.sort(source);
 
-        System.out.println("----------归并排序后-------------");
+        System.out.println("---------自底向上的归并排序后-------------");
         merge_bu.show(source);
+        merge_bu.isSorted(source);
     }
 
 
