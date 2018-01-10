@@ -32,16 +32,23 @@ public class Graph {
 
 
         try {
-            FileReader reader = new FileReader(new File("/Users/lidaoyuan/Desktop/FMProjects/algorithm/Graph/src/mediumG.txt")); // 读取文本中内容
+
+            FileReader reader = new FileReader(new File("/Users/zhangdawei/Desktop/Project/algorithm/Graph/src/mediumG.txt")); // 读取文本中内容
             BufferedReader br = new BufferedReader(reader);
 
             Undigraph undigraph =new Undigraph(br);
-            undigraph.toString();
+
+            System.out.println(undigraph.toString());
 
         }catch (IOException e) {
+                System.out.print(e.toString());
 
         }
 
+
+
+
+    }
 
 
     // 计算V的度数
@@ -58,10 +65,25 @@ public class Graph {
     // 计算所有顶点的最大度数
     public static int maxDegree(Undigraph undigraph){
         int max = 0;
-        for (int i=0;i<)
-
+        int graphV = undigraph.V();
+        for (int i = 0;i < graphV;i++){
+            if (max < degree(undigraph,i)) max = degree(undigraph,i);
+        }
+        return max;
     }
-}
+
+
+    // 计算自环的个数
+    public  static  int numberOfSelfLoops(Undigraph G){
+        int count = 0;
+        int GV = G.V();
+        for (int i = 0;i < GV; i++){
+            for (int j : G.adj(i)){
+                if (j == i) count ++;  // 所有相邻的顶点中,有当前的顶点
+            }
+        }
+        return count/2;   // 每一个顶点都计算了两次
+    }
 
 
 }
