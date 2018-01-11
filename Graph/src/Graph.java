@@ -34,7 +34,7 @@ public class Graph {
         try {
 
             // 初始化无向图
-            FileReader reader = new FileReader(new File("/Users/ml/Desktop/FMProject/Graph/src/tinyGG.txt")); // 读取文本中内容
+            FileReader reader = new FileReader(new File(System.getProperty("user.dir") +"/src/tinyGG.txt")); // 读取文本中内容
             BufferedReader br = new BufferedReader(reader);
 
             Undigraph undigraph =new Undigraph(br);
