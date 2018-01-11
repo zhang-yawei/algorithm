@@ -33,12 +33,24 @@ public class Graph {
 
         try {
 
-            FileReader reader = new FileReader(new File("/Users/zhangdawei/Desktop/Project/algorithm/Graph/src/mediumG.txt")); // 读取文本中内容
+            // 初始化无向图
+            FileReader reader = new FileReader(new File("/Users/ml/Desktop/FMProject/Graph/src/tinyGG.txt")); // 读取文本中内容
             BufferedReader br = new BufferedReader(reader);
 
             Undigraph undigraph =new Undigraph(br);
-
             System.out.println(undigraph.toString());
+
+
+           // testDepthFirstSearch(undigraph,0); // 深度优先搜索
+
+            testPaths(undigraph,0);     // 寻找路径,输出所有244为起点的路径
+
+
+
+
+
+
+
 
         }catch (IOException e) {
                 System.out.print(e.toString());
@@ -49,6 +61,64 @@ public class Graph {
 
 
     }
+
+    /*********************************************************************/
+
+
+    /**
+     * 测试深度优先搜索
+     * @param undigraph
+     * @param s
+     */
+    private static void testDepthFirstSearch(Undigraph undigraph,int s){
+        // 初始化图算法 Search
+        DepthFirstSearch DPsearch = new DepthFirstSearch(undigraph,s);
+        // 输出所有和s连通的顶点
+        for (int v = 0;v < undigraph.V();v ++){
+            if (DPsearch.marked(v)){
+                System.out.print(v + "  ");
+            }
+            System.out.println();
+
+        }
+
+        //图是否为连通图.
+        if (DPsearch.count() != undigraph.V()){
+            System.out.println("图为非连通图");
+        }else System.out.println("图为连通图");
+
+
+    }
+
+
+    /**
+     * 测试寻找路径问题,输出以s为起点的所有连通的路径
+     * @param G 图
+     * @param s 起点s
+     */
+    private static void  testPaths(Undigraph G,int s){
+        Paths searchPaths = new Paths(G,s);
+        for (int v = 0; v < G.V(); v++){
+            String log=  s + "通向" + v + "的路径:";
+            if(searchPaths.hasPathTo(v)){
+                //stack的for each 并非先进后出,而是继承了vector
+                String path = "";
+                for (int x:searchPaths.pathTo(v)){
+                    if (x == v) path = x + path;
+                    else path = x + "-" + path;
+                }
+                log = log + path;
+            }
+            System.out.println(log);
+        }
+
+
+    }
+
+
+
+
+    /*********************************************************************/
 
 
     // 计算V的度数

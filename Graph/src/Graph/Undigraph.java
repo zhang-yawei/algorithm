@@ -1,5 +1,4 @@
 package Graph;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.*;
 import java.lang.*;
@@ -8,7 +7,7 @@ public class Undigraph {
 
     private int V;  // 顶点数目
     private int E;  // 边数
-    private Bag<Integer>[] GAdj; //  表示图的邻接表
+    public Bag<Integer>[] GAdj; //  表示图的邻接表
 
 //    public Undigraph(int V){
 //        this.V = V;
