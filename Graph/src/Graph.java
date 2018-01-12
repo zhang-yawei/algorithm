@@ -26,7 +26,6 @@
 import Graph.Undigraph;
 
 import java.io.*;
-
 public class Graph {
     public static void main(String[] args){
 
@@ -42,10 +41,12 @@ public class Graph {
 
 
            // testDepthFirstSearch(undigraph,0); // 深度优先搜索
+            System.out.println("深度优先搜索---------:");
 
             testPaths(undigraph,0);     // 寻找路径,输出所有244为起点的路径
 
-
+            System.out.println("广度优先搜索----------:");
+            testBreadFirstPath(undigraph,0);
 
 
 
@@ -112,6 +113,29 @@ public class Graph {
             System.out.println(log);
         }
 
+
+    }
+
+
+    /**
+     * 测试广度优先搜索
+     * @param G
+     * @param s
+     */
+    private static void testBreadFirstPath(Undigraph G,int s){
+        BreadFristSearch bearchPaths = new BreadFristSearch(G,s);
+        for (int v = 0; v < G.V(); v++){
+            String log=  s + "通向" + v + "的路径:";
+            if(bearchPaths.hasPathTo(v)){
+                String path = "";
+                for (int x:bearchPaths.pathTo(v)){
+                    if (x == v) path = x + path;
+                    else path = x + "-" + path;
+                }
+                log = log + path;
+            }
+            System.out.println(log);
+        }
 
     }
 

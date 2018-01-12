@@ -38,7 +38,7 @@ public class Bag<Item> implements Iterable<Item>{
 
     private void resize(int max){
         Item[] temp = (Item[]) new Object[max];
-        for (int i=0; i<size();i++){
+        for (int i=0; i<count;i++){
             temp[i] = items[i];
         }
         items = temp;
@@ -57,7 +57,7 @@ public class Bag<Item> implements Iterable<Item>{
         private int i=0;
 
        public boolean hasNext(){
-            return (i < count-1);
+            return (i < count);
         }
 
 
