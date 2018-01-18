@@ -1,6 +1,5 @@
 package Finds;
 
-import sun.management.ThreadInfoCompositeData;
 
 /**
  * Created by zhang on 2017/6/20.
