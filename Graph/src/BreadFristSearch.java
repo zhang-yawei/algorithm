@@ -4,6 +4,9 @@ import Graph.Undigraph;
 import java.util.LinkedList;
 import java.util.Stack;
 
+/**
+ * 图的广度优先搜索
+ */
 public class BreadFristSearch {
 
     private boolean[] marked;    //表示该值是否被访问过

@@ -26,6 +26,7 @@
 import Graph.Undigraph;
 
 import java.io.*;
+import Graph.Bag;
 public class Graph {
     public static void main(String[] args){
 
@@ -47,6 +48,17 @@ public class Graph {
 
             System.out.println("广度优先搜索----------:");
             testBreadFirstPath(undigraph,0);
+
+
+
+            System.out.println("测试图的连通分量----------:");
+
+
+            FileReader bReader = new FileReader(new File(System.getProperty("user.dir") +"/src/mediumG.txt")); // 读取文本中内容
+            BufferedReader bBr = new BufferedReader(bReader);
+            Undigraph bUndigraph =new Undigraph(bBr);
+
+            testCC(bUndigraph);
 
 
 
@@ -136,6 +148,39 @@ public class Graph {
             }
             System.out.println(log);
         }
+
+    }
+
+
+    /**
+     * 测试连通分量
+     * @param G
+     */
+    public static void testCC(Undigraph G){
+        CC cc = new CC(G);
+        int M = cc.count();
+        System.out.println(M + "个连通分量");
+
+        // 为根据连通分量数,生成对应的背包
+        Bag<Integer>[] components;
+        components = new  Bag [M];
+        for (int i = 0; i<M; i++){
+            components[i] = new Bag(0);
+        }
+
+        // 便利没一个顶点,根据顶点所在连通分量的标识符,放入对应的背包
+        for (int v=0;v<G.V();v++){
+            components[cc.id(v)].add(v);
+        }
+
+        //遍历每一个背包,输出连通分量
+        for (int i=0; i < M; i++){
+            for (int v: components[i]) {
+                System.out.print(v + " ");
+            }
+            System.out.println();
+        }
+
 
     }
 
